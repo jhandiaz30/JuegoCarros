@@ -18,7 +18,8 @@ public class Conexion {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3308/juegodecarros", "root", "");
-           
+                       System.out.println("si");
+
         } catch (SQLException e) {
 
             System.out.println(e);
