@@ -17,14 +17,17 @@ import java.util.Scanner;
 public class ConductoresServices {
  static Scanner sc = new Scanner(System.in);
     
- public static int leerConductor(){
+ public static ArrayList<Conductores> leerConductor(){
         ArrayList<Conductores>ma=new ArrayList<Conductores>();
         ma=ConductorDAO.leerConductoresDb();
         System.out.println("Escoge un conductor");
+        ArrayList<Conductores>conductor=new ArrayList<Conductores>();
+
         for (int i=0;i<ma.size();i++) {
          System.out.println(i+1+" "+ma.get(i).nombre);
      }
           int seleccion=  sc.nextInt();
-return ma.get(seleccion-1).id_carro;
+          conductor.add(new Conductores(ma.get(seleccion-1).id_conductor,ma.get(seleccion-1).nombre,ma.get(seleccion-1).vecesGanadas,ma.get(seleccion-1).id_carro));
+return conductor;
     }   
 }

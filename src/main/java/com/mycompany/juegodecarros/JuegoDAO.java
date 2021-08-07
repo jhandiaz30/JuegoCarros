@@ -7,7 +7,9 @@ package com.mycompany.juegodecarros;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -35,5 +37,26 @@ public class JuegoDAO {
             System.out.println(e + "hola");
         }
 
-    }           
+    }  
+        public static int  leerJuego() {
+        Conexion db_connect = new Conexion();
+ int  id_juego=0;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try (Connection conexion = db_connect.get_connection()) {
+            String query = "SELECT id_juego FROM juego ORDER BY id_juego DESC LIMIT 1";
+            ps = conexion.prepareStatement(query);
+            rs = ps.executeQuery();
+           while(rs.next()){
+            id_juego=rs.getInt("id_juego");
+           }
+         System.out.println(id_juego);
+  
+        } catch (SQLException e) {
+            System.out.println("no se pudieron reoccorer los mensajes en la tabla juego");
+            System.out.println(e + "hola");
+        }
+        
+return id_juego;
+    }
 }

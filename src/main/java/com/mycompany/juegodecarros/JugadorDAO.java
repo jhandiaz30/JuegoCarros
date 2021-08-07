@@ -57,7 +57,7 @@ ArrayList<Jugadores>ma=new ArrayList<Jugadores>();
         ma.add(new Jugadores(rs.getInt("id_jugador"),rs.getString("nombre"),rs.getInt("id_condu")));
            }
         } catch (SQLException e) {
-            System.out.println("no se pudieron reoccorer los mensajes");
+            System.out.println("no se pudo recorrer en la tabla jugadores");
             System.out.println(e + "hola");
         }
 return ma;

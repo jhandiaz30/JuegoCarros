@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -19,6 +20,7 @@ import java.util.Scanner;
 public class Inicio {
 
     static Scanner sc = new Scanner(System.in);
+        static ArrayList<Conductores> conductores;
 
     public static void main(String args[]) {
         Conexion conexion = new Conexion();
@@ -38,8 +40,8 @@ public class Inicio {
             Scanner sc2 = new Scanner(System.in);
 
             String mensaje = sc2.nextLine();
-            int id_conductor = ConductoresServices.leerConductor();
-            JugadoresServices.crearJugador(mensaje, id_conductor);
+             conductores=ConductoresServices.leerConductor();
+            JugadoresServices.crearJugador(mensaje, conductores.get(0).id_conductor);
             System.out.println(numeroJugadores);
 
         } while (valor > 0);
@@ -55,10 +57,22 @@ public class Inicio {
         JuegosServices.crearJuego(date,id_pista);
         
         ArrayList <Jugadores> jugadores=JugadoresServices.leerJugadores(numeroJugadores);
-        System.out.println(jugadores.size());   
+        int id_juego=JuegoDAO.leerJuego();
+posicion(jugadores,id_juego);
     }
 
-    public static void escogerConductor() {
+    public static void posicion(ArrayList<Jugadores> jugadores,int id_juego) {
+           Random rnd = new Random();
+ int carril=1;
+        do{
+       int randomNumber = rnd.nextInt(jugadores.size());
+       Juego_jugadoresServices.crearJuego_jugadores(id_juego, jugadores.get(randomNumber).id_jugador, carril);
+carril++;
+jugadores.remove(randomNumber);
+}
+while(jugadores.size()>0);
 
     }
+    
+
 }
