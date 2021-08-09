@@ -8,3 +8,6 @@
 1. También cree tabla pista, esta tabla pista tiene varias lugares para realizar la carrera, el usuario elige cual. Esta tabla pista, se relaciona con la tabla carro, generando una relacion muchos a muchos donde irá la posicion de los carros con su posicion o numero de carril
 1. Para acceder al historial de cada carrera de una forma mas facil, cree una tabla juego  que tendrá un id y una fecha, esta tabla se relaciona con la tabla jugadores. Generando una relacion muchos a muchos que es la tabla juego_jugadores, en esta tabla quedará guardado el podio del juego. es decir la posicion en la que llego cada jugador
 1. El historial o la cantidad de veces que ha ganado un conductor quedará  guardado en la tabla conductores. En el ejercicio decia conductores, pero podia ser interpretado tambien como jugadores, puesto  que inicialmente defini que cada jugador debia elegir un conductor, el conductor es el que guardara el historial de ganadas es decir cada vez que quede de primer puesto aumentara 1. 
+
+
+<img src="/Captura.PNG" alt="db"/>
