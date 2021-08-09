@@ -28,15 +28,38 @@ public class Juego_jugadorDAO {
 
                 ps.executeUpdate();
 
-                System.out.println("Mensaje Creado");
             } catch (SQLException e) {
-                System.out.println(e + "hola");
+                System.out.println("No se pudo insertar los datos a la tabla juego_jugadores");
             }
 
         } catch (SQLException e) {
-            System.out.println(e + "hola");
+            System.out.println("No se pudo conectar a la db");
         }
 
-    }           
+    }
+    
+      public static void ActualizarJuego_jugador(Juego_jugadores juego) {
+        Conexion db_connect = new Conexion();
+        try (Connection conexion = db_connect.get_connection()) {
+            PreparedStatement ps = null;
+            try {
+
+                String query = "UPDATE juego_jugadores SET posicion=? WHERE id_juego=? AND id_jugador=?;";
+                ps = conexion.prepareStatement(query);
+                ps.setInt(1, juego.getPosicion());
+                ps.setInt(2, juego.getId_juego());
+                ps.setInt(3, juego.getId_jugador());
+
+                ps.executeUpdate();
+
+            } catch (SQLException e) {
+                System.out.println(e + "No se actualizo");
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e + "No se pudo conectat a la db");
+        }
+
+    }
 }
 

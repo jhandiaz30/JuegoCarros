@@ -23,6 +23,11 @@ public class Conductores {
         this.id_carro = id_carro;
     }
 
+    public Conductores() {
+    }
+
+   
+
     
 
     public int getId_conductor() {

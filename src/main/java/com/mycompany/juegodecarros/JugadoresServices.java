@@ -25,10 +25,13 @@ public class JugadoresServices {
     
         public static ArrayList<Jugadores> leerJugadores(int numeroDeJugadores){
         ArrayList<Jugadores>jugador=new ArrayList<Jugadores>();
+        ArrayList<Jugadores>jugador2=new ArrayList<Jugadores>();
+
         jugador=JugadorDAO.leerJugadores(numeroDeJugadores);
-        for (int i=0;i<jugador.size();i++) {
-         System.out.println(i+1+" "+jugador.get(i).nombre);
-     }
-return jugador;
+         for (int i=jugador.size()-1;i>=0;i--) {
+jugador2.add(jugador.get(i));
+         }
+       
+return jugador2;
     }  
 }

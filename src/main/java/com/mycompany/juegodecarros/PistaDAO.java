@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * @author jhanm
  */
 public class PistaDAO {
-    public static ArrayList<Pistas>  leerConductoresDb() {
+    public static ArrayList<Pistas>  leerPistas() {
         Conexion db_connect = new Conexion();
 
 ArrayList<Pistas>pista=new ArrayList<Pistas>();
@@ -32,9 +32,9 @@ ArrayList<Pistas>pista=new ArrayList<Pistas>();
        
            }
         } catch (SQLException e) {
-            System.out.println("no se pudieron reoccorer los mensajes");
+            System.out.println("no se pudo recorrer la tabla pista");
 
-            System.out.println(e + "hola");
+            System.out.println(e + "No se conecto a la db");
         }
 return pista;
     }

@@ -28,13 +28,12 @@ public class JugadorDAO {
                 ps.setInt(2, jugador.getId_condu());
                 ps.executeUpdate();
 
-                System.out.println("Mensaje Creado");
             } catch (SQLException e) {
-                System.out.println(e + "hola");
+                System.out.println("No se pudo insertar a la tabla jugadores");
             }
 
         } catch (SQLException e) {
-            System.out.println(e + "hola");
+            System.out.println(e + "No se pudo conectar a la db");
         }
 
     } 
@@ -57,8 +56,7 @@ ArrayList<Jugadores>ma=new ArrayList<Jugadores>();
         ma.add(new Jugadores(rs.getInt("id_jugador"),rs.getString("nombre"),rs.getInt("id_condu")));
            }
         } catch (SQLException e) {
-            System.out.println("no se pudo recorrer en la tabla jugadores");
-            System.out.println(e + "hola");
+            System.out.println("no se pudo recorrer la tabla jugadores");
         }
 return ma;
     }

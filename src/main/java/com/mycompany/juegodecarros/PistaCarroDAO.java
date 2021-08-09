@@ -20,7 +20,7 @@ public class PistaCarroDAO {
             PreparedStatement ps = null;
             try {
 
-                String query = "INSERT INTO `pista_carro` (id_carro`,`id_pista`,`carril`) VALUES (?, ?, ?);";
+                String query = "INSERT INTO `pista_carro` (`id_carro`,`id_pista`,`carril`) VALUES (?, ?, ?);";
                 ps = conexion.prepareStatement(query);
                 ps.setInt(1, pista_carro.getId_carro());
                 ps.setInt(2, pista_carro.getId_pista());
@@ -28,13 +28,12 @@ public class PistaCarroDAO {
 
                 ps.executeUpdate();
 
-                System.out.println("Mensaje Creado");
             } catch (SQLException e) {
-                System.out.println(e + "no ha sido creado el mensaje en la tabla pista carro");
+                System.out.println(e + "no se subieron los datos a la tabla pista carro");
             }
 
         } catch (SQLException e) {
-            System.out.println(e + "hola");
+            System.out.println(e + "No se pudo conectar a la tabla pista");
         }
 
     }  

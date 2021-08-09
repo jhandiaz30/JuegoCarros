@@ -28,13 +28,12 @@ public class JuegoDAO {
                 ps.setInt(2, juego.getId_pista());
                 ps.executeUpdate();
 
-                System.out.println("Mensaje Creado");
             } catch (SQLException e) {
-                System.out.println(e + "hola");
+                System.out.println(e + "no se insertaron los datos a la tabla juego");
             }
 
         } catch (SQLException e) {
-            System.out.println(e + "hola");
+            System.out.println(e + "no se pudo conectar a la db ");
         }
 
     }  
@@ -50,11 +49,9 @@ public class JuegoDAO {
            while(rs.next()){
             id_juego=rs.getInt("id_juego");
            }
-         System.out.println(id_juego);
   
         } catch (SQLException e) {
-            System.out.println("no se pudieron reoccorer los mensajes en la tabla juego");
-            System.out.println(e + "hola");
+            System.out.println("no se pudo reoccorer la tabla juego");
         }
         
 return id_juego;

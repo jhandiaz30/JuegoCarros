@@ -13,14 +13,10 @@ import java.util.ArrayList;
  * @author jhanm
  */
 public class CarroServices {
-     public static int leerCarros(){
+     public static ArrayList<Carro> leerCarros(int id_carro){
         ArrayList<Carro>carro=new ArrayList<Carro>();
-        carro=CarroDAO.leerCarro(0);
-        System.out.println("Escoge una pista");
-        for (int i=0;i<pista.size();i++) {
-         System.out.println(i+1+" "+pista.get(i).nombre);
-     }
-          int seleccion=  sc.nextInt();
-return pista.get(seleccion-1).id_pista;
+        carro=CarroDAO.leerCarro(id_carro);
+       
+return carro;
     }  
 }

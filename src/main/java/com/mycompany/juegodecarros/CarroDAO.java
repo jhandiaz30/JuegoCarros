@@ -35,8 +35,7 @@ ArrayList<Carro>carro=new ArrayList<Carro>();
            }
         } catch (SQLException e) {
             System.out.println("no se pudieron reoccorer la tabla carro");
-
-            System.out.println(e + "hola");
+           
         }
 return carro;
     }
