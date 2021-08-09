@@ -177,7 +177,7 @@ System.out.println("¿Cuantos jugadores disputaran la partida?");
 
         ConductoresServices.actualizarConductor(id_conductor, veces_ganadas);
         for (int i = 0; i < ganadores.size(); i++) {
-            System.out.println("en el puesto " + (i + 1) + " se encuentra "+ganadores.get(i).getNombre());
+            System.out.println("En el puesto " + (i + 1) + " se encuentra "+ganadores.get(i).getNombre());
             Juego_jugadoresServices.actualizarJuego_jugadores(id_juego, ganadores.get(i).getId_jugador(), (i + 1));
         }
         conductores.clear();
