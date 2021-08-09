@@ -127,10 +127,10 @@ System.out.println("¿Cuantos jugadores disputaran la partida?");
                 Scanner sc2 = new Scanner(System.in);
                 String leer = sc2.nextLine();
                 dista = sumaDistancia(list, kilometros);
-                System.out.println(jugadoresDistancias.get(i).getNombre() + " Recorriste " + dista +"de "+kilometros*1000);
+                System.out.println(jugadoresDistancias.get(i).getNombre() + " Recorriste " + dista +" de "+kilometros*1000);
 
                 jugadoresDistancias.get(i).setDistancia(dista);
-                if (jugadoresDistancias.get(i).getDistancia() >= kilometros * 100) {
+                if (jugadoresDistancias.get(i).getDistancia() >= kilometros * 1000) {
                     ganadores.add(new jugadoresDistancias(jugadoresDistancias.get(i).getId_jugador(), jugadoresDistancias.get(i).getNombre(), jugadoresDistancias.get(i).getId_condu(), jugadoresDistancias.get(i).getDistancia()));
 
                 }
@@ -138,7 +138,7 @@ System.out.println("¿Cuantos jugadores disputaran la partida?");
             }
             for (int i = jugadoresDistancias.size() - 1; i >= 0; i--) {
 
-                if (jugadoresDistancias.get(i).getDistancia() >= kilometros * 100) {
+                if (jugadoresDistancias.get(i).getDistancia() >= kilometros * 1000) {
 
                     jugadoresDistancias.remove(jugadoresDistancias.get(i));
 
@@ -177,7 +177,7 @@ System.out.println("¿Cuantos jugadores disputaran la partida?");
 
         ConductoresServices.actualizarConductor(id_conductor, veces_ganadas);
         for (int i = 0; i < ganadores.size(); i++) {
-            System.out.println("en el puesto " + (i + 1) + "se encuentra "+ganadores.get(i).getNombre());
+            System.out.println("en el puesto " + (i + 1) + " se encuentra "+ganadores.get(i).getNombre());
             Juego_jugadoresServices.actualizarJuego_jugadores(id_juego, ganadores.get(i).getId_jugador(), (i + 1));
         }
         conductores.clear();

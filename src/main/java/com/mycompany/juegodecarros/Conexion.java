@@ -17,7 +17,7 @@ public class Conexion {
      public Connection get_connection() {
         Connection connection = null;
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3308/juegodecarros", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://bvjtlo88h8kkvkposd0q-mysql.services.clever-cloud.com:3306/bvjtlo88h8kkvkposd0q", "uwinyytfybah2i1e", "CL2LF3fEY2O5PIvPH8Ew");
 
         } catch (SQLException e) {
 
